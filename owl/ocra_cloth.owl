@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#"
+     xml:base="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ocra="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl">
+        <owl:imports rdf:resource="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#Garment -->
+
+    <owl:Class rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#Garment">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentFabric"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A DesignedArtifact that is also classified by some concepts such as the type or the fabric of the garment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Garment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentFabric -->
+
+    <owl:Class rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentFabric">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#Garment"/>
+                            <rdf:Description rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentPile"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A Concept used to classify a Garment based on the fabric used to fabricate it (e.g., cotton, linen, etc.).</rdfs:comment>
+        <rdfs:label xml:lang="en">Garment fabric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentPile -->
+
+    <owl:Class rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentPile">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+        <rdfs:comment xml:lang="en">A PhysicalObject representing a pile (set) of Garments, which may also classified by some concepts such as the type or the fabric of the garment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Garment pile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentType -->
+
+    <owl:Class rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentType">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#Garment"/>
+                            <rdf:Description rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_cloth.owl#GarmentPile"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A Concept used to classify a Garment based on the type (e.g., towel, dish towel, etc.).</rdfs:comment>
+        <rdfs:label xml:lang="en">Garment type</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
