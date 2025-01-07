@@ -1,7 +1,7 @@
 <package>
-  <name>know_cra</name>
+  <name>know_plan</name>
   <version>1.0.0</version>
-  <description>Basic package to use knowledge bases for collaborative robotics and adaptation applications.
+  <description>Basic package to use a knowledge base to represent and reason with knowledge about plans for plan comparison and selection (disambiguation).
   </description>
   <maintainer email="aolivares@iri.upc.edu">Alberto Olivares Alarcos</maintainer>
 
