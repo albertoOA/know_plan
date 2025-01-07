@@ -39,19 +39,7 @@ catkin_make -DCATKIN_WHITELIST_PACKAGES="know_plan;comp_spatial;knowrob_common;r
 ```
 
 ### Running a rosprolog-based knowledge base for collaborative robotics and adaptation
-First, we can run a knowledge base with the basic knowledge for a specific use case in which a robot and a human collaborate to fill the compartments of a tray with tokens.
-
-```
-roslaunch know_plan map_cra_cs_filling_tray.launch
-```
-
-Finally, one can run a knowledge base with all the knowledge stored in an episodic memory, *validation neem*, which is used during the validation presented in the article [1].
-
-```
-roslaunch know_plan map_cra_cs_filling_tray_neem.launch
-```
-
-Alternatively, one can also run a knowledge base with all the knowledge stored in another episodic memory, *contrastive_plans/validation neem*, which is used during the validation presented in the article [2].
+One can also run a knowledge base with all the knowledge stored in an episodic memory, *contrastive_plans/validation neem*, which is related to the research discussed during article [1].
 
 ```
 roslaunch know_plan map_cra_cs_bringing_object_plan_disambiguation_with_recorded_neem.launch
@@ -59,7 +47,7 @@ roslaunch know_plan map_cra_cs_bringing_object_plan_disambiguation_with_recorded
 
 
 ### Running a planning domain-agnostic knowledge base for objective evaluation of narratives 
-The idea here is to run a generic knowledge base in which knowledge about two different plans will be stored for later comparison and contrastive narration.  
+The idea here is to run a generic knowledge base in which knowledge about two different plans will be stored for later comparison, contrastive selection and narration.  
 
 The next example assumes that ROSPlan is already installed, following the instructions on the gihtub README: [https://github.com/KCL-Planning/ROSPlan](https://github.com/KCL-Planning/ROSPlan).
 
@@ -75,6 +63,4 @@ roslaunch know_plan rosplan_cra_cs_generic.launch
 
 
 
-**[1]** A. Olivares-Alarcos, A. Andriella, S. Foix and G. Alenyà. Robot explanatory narratives of collaborative and adaptive experiences, 40th IEEE International Conference on Robotics and Automation (ICRA), 2023, London, United Kingdom (pp. 11964-11971).
-
-**[2]** A. Olivares-Alarcos, S. Foix, J. Borràs, G. Canal and G. Alenyà. (2024). Ontological modeling and reasoning for comparison and contrastive narration of robot plans. In Proceedings of the 2024 International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2024, Auckland, New Zealand, to appear.
+**[1]** A. Olivares-Alarcos, S. Foix, J. Borràs, G. Canal and G. Alenyà. (2024). Ontological modeling and reasoning for comparison and contrastive narration of robot plans. In Proceedings of the 2024 International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2024, Auckland, New Zealand, to appear.
