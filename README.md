@@ -9,11 +9,11 @@ sudo apt install swi-prolog libjson-glib-dev
 
 sudo apt install python-rdflib
 
-wstool set know_cra --git https://github.com/albertoOA/know_cra.git
+wstool set know_plan --git https://github.com/albertoOA/know_plan.git
 
-wstool update know_cra
+wstool update know_plan
 
-wstool merge know_cra/rosinstall/know_cra.rosinstall
+wstool merge know_plan/rosinstall/know_plan.rosinstall
 
 wstool update 
 ```
@@ -23,9 +23,9 @@ wstool update
 
 In the package, we already provide a virtual environment but it was built for our computer and it will probably not work in yours. You can easily delete it and create and configure your own environment executing the following commands in a terminal.
 ```
-cd <know_cra_folder>/python_environment
-python3 -m venv know_cra_rosplan
-source know_cra_rosplan/bin/activate
+cd <know_plan_folder>/python_environment
+python3 -m venv know_plan_rosplan
+source know_plan_rosplan/bin/activate
 
 python3 -m pip install wheel catkin_pkg rospkg pyyaml future
 ```
@@ -35,26 +35,26 @@ python3 -m pip install wheel catkin_pkg rospkg pyyaml future
 ```
 roscd; cd ..
 
-catkin_make -DCATKIN_WHITELIST_PACKAGES="know_cra;comp_spatial;knowrob_common;rosprolog;json_prolog_msgs;rosowl;genowl"
+catkin_make -DCATKIN_WHITELIST_PACKAGES="know_plan;comp_spatial;knowrob_common;rosprolog;json_prolog_msgs;rosowl;genowl"
 ```
 
 ### Running a rosprolog-based knowledge base for collaborative robotics and adaptation
 First, we can run a knowledge base with the basic knowledge for a specific use case in which a robot and a human collaborate to fill the compartments of a tray with tokens.
 
 ```
-roslaunch know_cra map_cra_cs_filling_tray.launch
+roslaunch know_plan map_cra_cs_filling_tray.launch
 ```
 
 Finally, one can run a knowledge base with all the knowledge stored in an episodic memory, *validation neem*, which is used during the validation presented in the article [1].
 
 ```
-roslaunch know_cra map_cra_cs_filling_tray_neem.launch
+roslaunch know_plan map_cra_cs_filling_tray_neem.launch
 ```
 
 Alternatively, one can also run a knowledge base with all the knowledge stored in another episodic memory, *contrastive_plans/validation neem*, which is used during the validation presented in the article [2].
 
 ```
-roslaunch know_cra map_cra_cs_bringing_object_plan_disambiguation_with_recorded_neem.launch
+roslaunch know_plan map_cra_cs_bringing_object_plan_disambiguation_with_recorded_neem.launch
 ```
 
 
@@ -64,13 +64,13 @@ The idea here is to run a generic knowledge base in which knowledge about two di
 The next example assumes that ROSPlan is already installed, following the instructions on the gihtub README: [https://github.com/KCL-Planning/ROSPlan](https://github.com/KCL-Planning/ROSPlan).
 
 ```
-roslaunch know_cra map_cra_cs_generic.launch
+roslaunch know_plan map_cra_cs_generic.launch
 ```
 
 Now it is time to generate a couple of plans for a target domain and problem. In order to have two different plans for the same problem, it will be necessary to run twice the launch file modifying the argument *'evaluation'*. When it is set to 'false', the planner will take the first plan that is found after 1 second of graph search, if it is set to 'true' the planner will search during 120 seconds. Very oftent, the generated plan after 120 seconds will be better, but note that it will not always be true. In any case, two plans will be generated and their knowledge asserted to the knowledge base, where they will be compared using logical reasoning rules written in Prolog. Remember, you need to run the launch with *'evaluation'* set to 'false', close the execution and run it again with the argument set to 'true'. 
 
 ```
-roslaunch know_cra rosplan_cra_cs_generic.launch 
+roslaunch know_plan rosplan_cra_cs_generic.launch 
 ``` 
 
 

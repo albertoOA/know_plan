@@ -4,7 +4,7 @@
 
 import rospy
 
-from know_cra.rosplan_cra_module import ROSPlanCRA
+from know_plan.rosplan_cra_module import ROSPlanCRA
 
 if __name__ == "__main__":
     rospy.init_node("rosplan_for_cra_node", sys.argv)
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     rpcra.rosprolog_wrapper_for_rosplan_cra_.rosprolog_assertion_query(plan_assertion_query_text)
 
     # save the NEEM using in the name 'plan_adaptation_case_' and the current time
-    query_string_foo_ = "ros_package_path('know_cra', P1), \
+    query_string_foo_ = "ros_package_path('know_plan', P1), \
         atom_concat(P1, '/NEEMs/contrastive_plans/"+ rpcra.plan_adaptation_case_ +"_' , P2), \
         get_time(T), atom_concat(P2, T, P3), mng_dump(roslog, P3)."
     rpcra.rosprolog_wrapper_for_rosplan_cra_.rosprolog_assertion_query(query_string_foo_)

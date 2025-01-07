@@ -5,8 +5,8 @@
 import sys
 import rospy
 
-from know_cra.rosplan_wrapper import ROSPlanWrapper
-from know_cra.rosprolog_wrapper_for_rosplan import ROSPrologWrapperForROSPlanCRA
+from know_plan.rosplan_wrapper import ROSPlanWrapper
+from know_plan.rosprolog_wrapper_for_rosplan import ROSPrologWrapperForROSPlanCRA
 
 class ROSPlanCRA:
     def __init__(self):

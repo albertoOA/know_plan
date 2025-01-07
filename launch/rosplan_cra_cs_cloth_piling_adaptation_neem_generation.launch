@@ -3,17 +3,17 @@
 	<arg name="plan_adaptation_case" default="unfolded_cloth" />
 	<arg name="semantic_map_namespace"	 	default="map_piling_cloth" />
 
-	<arg name="domain_path"		default="$(find know_cra)/pddl/domain/collaborative_cloth_piling_domain.pddl" />
-	<arg name="problem_path"	default="$(find know_cra)/pddl/problem/collaborative_cloth_piling_problem_$(arg plan_adaptation_case).pddl" />
+	<arg name="domain_path"		default="$(find know_plan)/pddl/domain/collaborative_cloth_piling_domain.pddl" />
+	<arg name="problem_path"	default="$(find know_plan)/pddl/problem/collaborative_cloth_piling_problem_$(arg plan_adaptation_case).pddl" />
 	<arg name="narrator_name"	default="" />
 	<arg name="print_actions"	default="false" />
 	<arg name="evaluation"	 	default="false" />
 
 	<arg name="knowrob_settings" default="$(find knowrob)/settings/default.pl" />
-	<arg name="owl_file" default="$(find know_cra)/owl/maps/map_cra_cs_piling_cloth.owl" />
+	<arg name="owl_file" default="$(find know_plan)/owl/maps/map_cra_cs_piling_cloth.owl" />
 
 	<!-- Include rosplan -->
-	<include file="$(find know_cra)/launch/rosplan_full.launch">
+	<include file="$(find know_plan)/launch/rosplan_full.launch">
 		<arg name="domain_path"		 		value="$(arg domain_path)" />
 		<arg name="problem_path" 			value="$(arg problem_path)" />
 		<arg name="planning_language" 		value="PDDL" />
@@ -30,12 +30,12 @@
 	<!-- Include rosprolog knowledge base -->
 	<env name="KNOWROB_SETTINGS" value="$(arg knowrob_settings)" /> <!-- Configure settings file. -->
 	<include file="$(find rosprolog)/launch/rosprolog.launch">
-		<arg name="initial_package" default="know_cra" />
+		<arg name="initial_package" default="know_plan" />
 		<arg name="initial_goal" default="load_owl('$(arg owl_file)')." />
 	</include>
 
 	<!-- Include rosplan-rosprolog node -->
-	<node name="rosplan_rosprolog_node" pkg="know_cra" type="planning_and_neem_generation_for_plan_adaptation.py" output="screen">
+	<node name="rosplan_rosprolog_node" pkg="know_plan" type="planning_and_neem_generation_for_plan_adaptation.py" output="screen">
 		<param name="plan_adaptation_case" value="$(arg plan_adaptation_case)" /> 
 		<param name="semantic_map_namespace" value="$(arg semantic_map_namespace)" />  
         </node>

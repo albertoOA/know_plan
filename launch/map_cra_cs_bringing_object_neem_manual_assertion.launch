@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 	<!-- Include simple semantic map for 'bringing an object' -->
-	<include file="$(find know_cra)/launch/map_cra_cs_bringing_object.launch" >
-		<arg name="owl_file"        value="$(find know_cra)/owl/maps/map_cra_cs_bringing_object.owl" />
+	<include file="$(find know_plan)/launch/map_cra_cs_bringing_object.launch" >
+		<arg name="owl_file"        value="$(find know_plan)/owl/maps/map_cra_cs_bringing_object.owl" />
 	</include>
 
 	<!-- Include node for manual assertion of neems regarding objects in the map -->

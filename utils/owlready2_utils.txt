@@ -5,7 +5,7 @@ INSERT { ?n rdfs:comment "new individual assertion" ; DUL:hasParticipant ocra_fi
 DELETE { ocra_filling_a_tray_adaptation_full_compartment:RFID_board_current_capacity DUL:hasDataValue ?x . } INSERT { ocra_filling_a_tray_adaptation_full_compartment:RFID_board_current_capacity DUL:hasDataValue 5 . } WHERE   { ocra_filling_a_tray_adaptation_full_compartment:RFID_board_current_capacity DUL:hasDataValue ?x . }
 
 
-file:///home/aolivares/iri-lab/iri_ws/src/papers_repositories/know_cra/owl/ont/ocra_filling_a_tray_adaptation_full_compartment.owl
+file:///home/aolivares/iri-lab/iri_ws/src/papers_repositories/know_plan/owl/ont/ocra_filling_a_tray_adaptation_full_compartment.owl
 
 
 SELECT ?x { ?x DUL:hasParticipant ocra_filling_a_tray_adaptation_full_compartment:Kinova_robot ; rdf:type ocra:PlanAdaptation. }

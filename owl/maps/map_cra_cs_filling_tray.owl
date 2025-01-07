@@ -30,12 +30,12 @@
         <owl:imports rdf:resource="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl"/>
         <owl:imports rdf:resource="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_filling_a_tray.owl"/>
         <!--
-        <owl:imports rdf:resource="package://know_cra/owl/ocra_filling_a_tray.owl"/>
+        <owl:imports rdf:resource="package://know_plan/owl/ocra_filling_a_tray.owl"/>
 
-        <owl:imports rdf:resource="package://know_cra/owl/maps/ocra_filling_a_tray.owl"/>
-        <owl:imports rdf:resource="package://know_cra/owl/maps/ocra_filling_a_tray_collaboration_type_and_risk.owl"/> 
-        <owl:imports rdf:resource="package://know_cra/owl/maps/ocra_filling_a_tray_adaptation_full_compartment.owl"/>
-        <owl:imports rdf:resource="package://know_cra/owl/maps/ocra_filling_a_tray_collaboration_type_and_risk_with_negative_hasPlan.owl"/>
+        <owl:imports rdf:resource="package://know_plan/owl/maps/ocra_filling_a_tray.owl"/>
+        <owl:imports rdf:resource="package://know_plan/owl/maps/ocra_filling_a_tray_collaboration_type_and_risk.owl"/> 
+        <owl:imports rdf:resource="package://know_plan/owl/maps/ocra_filling_a_tray_adaptation_full_compartment.owl"/>
+        <owl:imports rdf:resource="package://know_plan/owl/maps/ocra_filling_a_tray_collaboration_type_and_risk_with_negative_hasPlan.owl"/>
         -->
     </owl:Ontology>
 

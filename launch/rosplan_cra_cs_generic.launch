@@ -6,17 +6,17 @@
 	<arg name="problem_name" default="instance-2" /> <!-- "apartment_problem"   OR   "instance-1"  "instance-2"   "instance-3"-->
 	<arg name="evaluation"	 	default="false" />
 
-	<!-- <arg name="domain_path"		default="$(find know_cra)/pddl/domain/$(arg domain_name).pddl" /> -->
-	<arg name="domain_path"		default="$(find know_cra)/pddl/test-domains/$(arg domain_name)/domain.pddl" />
-	<!-- <arg name="problem_path"	default="$(find know_cra)/pddl/problem/$(arg problem_name).pddl" /> -->
-	<arg name="problem_path"	default="$(find know_cra)/pddl/test-domains/$(arg domain_name)/instances/$(arg problem_name).pddl" />
+	<!-- <arg name="domain_path"		default="$(find know_plan)/pddl/domain/$(arg domain_name).pddl" /> -->
+	<arg name="domain_path"		default="$(find know_plan)/pddl/test-domains/$(arg domain_name)/domain.pddl" />
+	<!-- <arg name="problem_path"	default="$(find know_plan)/pddl/problem/$(arg problem_name).pddl" /> -->
+	<arg name="problem_path"	default="$(find know_plan)/pddl/test-domains/$(arg domain_name)/instances/$(arg problem_name).pddl" />
 	<arg name="narrator_name"	default="" />
 	<arg name="print_actions"	default="false" />
 
 	
 
 	<!-- Include rosplan -->
-	<include file="$(find know_cra)/launch/rosplan_full.launch">
+	<include file="$(find know_plan)/launch/rosplan_full.launch">
 		<arg name="domain_path"		 		value="$(arg domain_path)" />
 		<arg name="problem_path" 			value="$(arg problem_path)" />
 		<arg name="planning_language" 		value="PDDL" />
@@ -31,7 +31,7 @@
 	</include>
 
 	<!-- Include rosplan-rosprolog node -->
-	<node name="rosplan_rosprolog_node" pkg="know_cra" type="planning_for_acxon_objective_evaluation.py" output="screen">
+	<node name="rosplan_rosprolog_node" pkg="know_plan" type="planning_for_acxon_objective_evaluation.py" output="screen">
 		<param name="semantic_map_namespace" value="$(arg semantic_map_namespace)" /> 
         </node>
 

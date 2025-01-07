@@ -5,7 +5,7 @@
 import sys
 import rospy
 
-from know_cra.rosplan_cra_module import ROSPlanCRA
+from know_plan.rosplan_cra_module import ROSPlanCRA
 
 if __name__ == "__main__":
     rospy.init_node("rosplan_for_cra_node", sys.argv)
@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     rpcra.rosplan_wrapper_.construct_plan_dict()
     rpcra.rosplan_wrapper_.plan_dict_['task_grounded_parameters_dict'].clear() # PARTIALLY-UGLY solution  
-    # TODO (future): modify 'unitary_plan_predicates_to_ontology_relations_dict_' in know_cra.rosprolog_wrapper_for_rosplan
+    # TODO (future): modify 'unitary_plan_predicates_to_ontology_relations_dict_' in know_plan.rosprolog_wrapper_for_rosplan
     ## print(rpcra.rosplan_wrapper_.plan_dict_)
 
     plan_triples_list = rpcra.rosprolog_wrapper_for_rosplan_cra_.plan_dict_to_triples_list(rpcra.rosplan_wrapper_.plan_dict_)

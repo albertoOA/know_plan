@@ -29,10 +29,10 @@
     <owl:Ontology rdf:about="http://www.iri.upc.edu/groups/perception/OCRA/maps/piling_cloth.owl#">
         <owl:imports rdf:resource="package://knowrob/owl/knowrob.owl"/>
         <owl:imports rdf:resource="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl"/>
-        <owl:imports rdf:resource="package://know_cra/owl/ocra_cloth.owl"/>
-        <owl:imports rdf:resource="package://know_cra/owl/ocra_common.owl"/>
+        <owl:imports rdf:resource="package://know_plan/owl/ocra_cloth.owl"/>
+        <owl:imports rdf:resource="package://know_plan/owl/ocra_common.owl"/>
         <!--
-        <owl:imports rdf:resource="package://know_cra/owl/ocra.owl"/>
+        <owl:imports rdf:resource="package://know_plan/owl/ocra.owl"/>
 
         -->
     </owl:Ontology>
