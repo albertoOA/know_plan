@@ -15,12 +15,9 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_python_setup()
 
-add_service_files(
-  FILES
-  OwlreadyLoadOntology.srv
-  OwlreadyInsertDeleteQuery.srv
-  OwlreadySelectQuery.srv
-)
+# add_service_files(
+#   FILES
+# )
 
 generate_messages(
   DEPENDENCIES

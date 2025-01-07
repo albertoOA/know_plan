@@ -18,18 +18,8 @@ wstool merge know_cra/rosinstall/know_cra.rosinstall
 wstool update 
 ```
 
-### Python3 virtual environment configuration and dependencies to use an owlready2-based knowledge base
 
-In the package, we already provide a virtual environment but it was built for our computer and it will probably not work in yours. You can easily delete it and create and configure your own environment executing the following commands in a terminal.
-```
-cd <know_cra_folder>/python_environment
-python3 -m venv know_cra_owlready2
-source know_cra_owlready2/bin/activate
-
-python3 -m pip install cython owlready2 catkin_pkg rospkg pyyaml future
-```
-
-### Python3 virtual environment configuration and dependencies to use rosplan together with any of the knowledge bases (rosprolog or owlready2)
+### Python3 virtual environment configuration and dependencies to use rosplan together with the rosprolog knowledge base
 
 In the package, we already provide a virtual environment but it was built for our computer and it will probably not work in yours. You can easily delete it and create and configure your own environment executing the following commands in a terminal.
 ```
@@ -67,10 +57,6 @@ Alternatively, one can also run a knowledge base with all the knowledge stored i
 roslaunch know_cra map_cra_cs_bringing_object_plan_disambiguation_with_recorded_neem.launch
 ```
 
-### Running an owlready2-based knowledge base for collaborative robotics and adaptation
-```
-rosrun konw_cra reasoning_with_owlready2.py
-```
 
 ### Running a planning domain-agnostic knowledge base for objective evaluation of narratives 
 The idea here is to run a generic knowledge base in which knowledge about two different plans will be stored for later comparison and contrastive narration.  
