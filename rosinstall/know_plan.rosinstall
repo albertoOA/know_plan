@@ -14,3 +14,7 @@
     local-name: knowrob/rosprolog
     uri: https://github.com/knowrob/rosprolog.git
     version: master
+- git: 
+    local-name: iai_common_msgs
+    uri: https://github.com/code-iai/iai_common_msgs.git
+    version: master
