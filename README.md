@@ -4,6 +4,14 @@ ROS package to use a knowledge base to represent and reason with knowledge about
 
 ### Dependencies to use a rosprolog-based knowledge base
 
+Make sure that you have installed wstool and that you have initialized a workspace. 
+```
+sudo apt install python3-wstool
+
+wstool init <your_catkin_ws>/src
+```
+
+Now let's proceed with the installation of dependencies.
 ```
 sudo apt install swi-prolog libjson-glib-dev
 
@@ -21,7 +29,8 @@ wstool update
 
 ### Python3 virtual environment configuration and dependencies to use rosplan together with the rosprolog knowledge base
 
-In the package, we already provide a virtual environment but it was built for our computer and it will probably not work in yours. You can easily delete it and create and configure your own environment executing the following commands in a terminal.
+In the package, we already provide a virtual environment but it was built for our computer and it will probably not work in yours. You can easily delete it and create and configure your own environment executing the following commands in a terminal. (note that python3-venv needs to bee installed)
+
 ```
 cd <know_plan_folder>/python_environment
 python3 -m venv know_plan_rosplan
