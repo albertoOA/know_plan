@@ -4,7 +4,7 @@ ROS package to use a knowledge base to represent and reason with knowledge about
 
 ### Dependencies to use a rosprolog-based knowledge base
 
-Make sure that you have installed wstool and that you have initialized a workspace. 
+In order to use the knowledge base it is necessary to use the framework [KnowRob](https://github.com/knowrob/knowrob), we will use the master branch, please make sure that you have installed all its prerequisites. It is also important to make sure that you have installed wstool and that you have initialized a workspace. 
 ```
 sudo apt install python3-wstool
 
