@@ -13,7 +13,7 @@ wstool init <your_catkin_ws>/src
 
 Now let's proceed with the installation of dependencies.
 ```
-sudo apt install swi-prolog libjson-glib-dev
+sudo apt install swi-prolog libjson-glib-dev libbson-1.0-0 libbson-dev libmongoc-1.0-0 libmongoc-dev libsnappy-dev gir1.2-json-1.0 
 
 sudo apt install python-rdflib
 
