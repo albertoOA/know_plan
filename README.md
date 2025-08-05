@@ -48,7 +48,7 @@ catkin_make -DCATKIN_WHITELIST_PACKAGES="know_plan;comp_spatial;knowrob_common;r
 ```
 
 ### Running a rosprolog-based knowledge base for collaborative robotics and adaptation
-One can also run a knowledge base with all the knowledge stored in an episodic memory, *contrastive_plans/validation neem*, which is related to the research discussed during article [1].
+One can also run a knowledge base with all the knowledge stored in an episodic memory, *contrastive_plans/validation neem*, which is related to the research discussed during articles [1,2].
 
 ```
 roslaunch know_plan map_cra_cs_bringing_object_plan_disambiguation_with_recorded_neem.launch
@@ -64,7 +64,7 @@ The next example assumes that ROSPlan is already installed, following the instru
 roslaunch know_plan map_cra_cs_generic.launch
 ```
 
-Now it is time to generate a couple of plans for a target domain and problem. In order to have two different plans for the same problem, it will be necessary to run twice the launch file modifying the argument *'evaluation'*. When it is set to 'false', the planner will take the first plan that is found after 1 second of graph search, if it is set to 'true' the planner will search during 120 seconds. Very oftent, the generated plan after 120 seconds will be better, but note that it will not always be true. In any case, two plans will be generated and their knowledge asserted to the knowledge base, where they will be compared using logical reasoning rules written in Prolog. Remember, you need to run the launch with *'evaluation'* set to 'false', close the execution and run it again with the argument set to 'true'. 
+Now it is time to generate a couple of plans for a target domain and problem. In order to have two different plans for the same problem, it will be necessary to run twice the launch file modifying the argument *'evaluation'*. When it is set to 'false', the planner will take the first plan that is found after 1 second of graph search, if it is set to 'true' the planner will search during 120 seconds. Very often, the generated plan after 120 seconds will be better, but note that it will not always be true. In any case, two plans will be generated and their knowledge asserted to the knowledge base, where they will be compared using logical reasoning rules written in Prolog. Remember, you need to run the launch with *'evaluation'* set to 'false', close the execution and run it again with the argument set to 'true'. As an alternative, you might change the domain problem, ensuring that the new plan will be different. 
 
 ```
 roslaunch know_plan rosplan_cra_cs_generic.launch 
@@ -72,4 +72,6 @@ roslaunch know_plan rosplan_cra_cs_generic.launch
 
 
 
-**[1]** A. Olivares-Alarcos, S. Foix, J. Borràs, G. Canal and G. Alenyà. (2024). Ontological modeling and reasoning for comparison and contrastive narration of robot plans. In Proceedings of the 2024 International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2024, Auckland, New Zealand, to appear.
+**[1]** Alberto Olivares-Alarcos, Sergi Foix, Júlia Borràs, Gerard Canal, and Guillem Alenyà. 2024. Ontological Modeling and Reasoning for Comparison and Contrastive Narration of Robot Plans. In Proceedings of the 23rd International Conference on Autonomous Agents and Multiagent Systems (AAMAS '24). International Foundation for Autonomous Agents and Multiagent Systems, 2405–2407.
+
+**[2]** Alberto Olivares-Alarcos, Sergi Foix, Júlia Borràs, Gerard Canal, and Guillem Alenyà. 2025. *Ontological Foundations for Contrastive Explanatory Narration of Robot Plans.* Information Sciences, under review.
